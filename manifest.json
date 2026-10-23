@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "Luke Patcher",
+  "version": "2.1.0",
+  "description": "Luke video Patcher, patch videos to upload at HQ.",
+  "permissions": [
+    "downloads"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Luke",
+    "default_icon": {
+      "128": "icons/icon1.png"
+    }
+  },
+  "icons": {
+    "128": "icons/icon1.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.tiktok.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "inject.js"
+      ],
+      "matches": [
+        "https://www.tiktok.com/*"
+      ]
+    }
+  ]
+}
